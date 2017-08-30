@@ -1,0 +1,301 @@
+%Homework Template
+%----------------------------------------
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{ifthen}
+\usepackage{pbox}
+\usepackage{romannum}
+\usepackage{centernot}
+\usepackage{color,soul}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{fancyhdr}
+\usepackage{pst-plot}
+
+%SetFonts
+\pagestyle{fancy}
+\rhead{Homework 1}
+\lhead{Jugal Marfatia}
+ 
+%----------------------------------------
+% Assignment Title and Your Name
+%----------------------------------------
+\title{Homework 1}
+\author{Jugal Marfatia \\ \\Microeconomics-1 \\ }
+\date{August 30, 2017}
+%----------------------------------------
+\begin{document}
+\maketitle
+
+%========================================
+%	START ANSWERS HERE
+%========================================
+ 
+\begin{problem}{1}. \\ \\
+The \textit{upper contour set} UCS = $ \{ x = (x_1, x_2) \in \mathbb{R}^{2}: x_1 \geq 2 \lor x_2 \geq 2\} $ (i.e max $\{x_1, x_2\}  \geq 2 $)
+\\
+\\
+The \textit{lower contour set} LCS = $ \{ x = (x_1, x_2) \in \mathbb{R}^{2}: x_1 \leq 2 \land x_2 \leq 2\} $ (i.e max $\{x_1, x_2\}  \leq 2 $)
+\\
+\\
+The \textit{indifference set} IND = $ \{ x = (x_1, x_2) \in \mathbb{R}^{2}: x_1, x_2 \leq 2 \land (x_1 = 2 \lor x_2 = 2) \} $ (i.e max $\{x_1, x_2\}  = 2 $)
+\\
+\\
+\\
+In order to show the preference relation is rational we will first check for completeness. i.e we will show $\forall x, y \in \mathbb{R}^{2}, x \succsim y \lor y \succsim x. $  \\ \\
+For any arbitrary, $x = (x_1, x_2) \in \mathbb{R}^{2} \land  y= (y_1, y_2) \in \mathbb{R}^{2}$ we can have only 2 cases. 
+\\
+\\Case 1, where max $\{x_1, x_2\} \geq $ max $\{y_1, y_2\} \implies x \succsim y, $ or case 2, where max $\{y_1, y_2\} \geq $ max $\{x_1, x_2\} \implies y \succsim x.$
+\\
+\\
+Therefore, $\forall x, y \in \mathbb{R}^{2}, x \succsim y \lor y \succsim x \iff $ the preference relation exhibits completeness.
+\\
+\\
+\\
+Next we will check for transitivity i.e. $\forall x, y, z \in \mathbb{R}^{2}, (x \succsim y \land y \succsim z) \implies x \succsim z.$
+\\
+\\
+For any arbitrary, $x = (x_1, x_2) \in \mathbb{R}^{2} \land  y= (y_1, y_2) \in \mathbb{R}^{2} \land z = (z_1, z_2) \in \mathbb{R}^{2}$, 
+\\
+\\
+If $ (x \succsim y \land y \succsim z) \implies $(max $\{x_1,x_2 \} \geq $ max $\{y_1,y_2 \} \land $ max $\{y_1,y_2 \} \geq $ max $\{z_1,z_2 \}) \implies $ max $\{x_1,x_2 \} \geq $ max $\{z_1,z_2 \} \implies  x \succsim z.$
+\\
+\\
+Therefore, $\forall x, y, z \in \mathbb{R}^{2}, (x \succsim y \land y \succsim z) \implies x \succsim z$ and thus the preference relation exhibits transitivity.
+\\
+\\
+Finally since preference relation exhibits completeness and transitivity, it is a rational relationship. 
+\\
+\\
+\\
+Next we will check for monotonicity i.e. $\forall x, y \in \mathbb{R}^{2}, x \neq y, x_k \geq y_k $ for all $ k \implies x \succsim z.$
+\\
+\\
+For any arbitrary, $x = (x_1, x_2) \in \mathbb{R}^{2} \land  y= (y_1, y_2) \in \mathbb{R}^{2}$,
+\\
+\\
+$x_k \geq y_k $ for all $ k \implies $ max $ \{x_1, x_2\} \geq  $ max $ \{y_1, y_2\} \implies x \succsim y$. Therefore the preference relation is monotone. 
+\\
+\\
+However, it is not strong monotone because if $ x = (3,2) $ and $ y = (3,1) $, we have $x_k \geq y_k $ for all $ k $, however $x \nsucc y.$  
+\\
+\\
+Finally, it is not convex because if $ x = (4,2) $ and $ y = (2,4),$ we have $x \succsim y $, however, $ .5 x + .5 y = (3,3)$ and $(3,3) \nsucceq (2,4) = y. $   
+\\
+\\
+\end{problem}
+\begin{problem}{2}. \\ \\ \\ \\ \\
+\psset{unit=1.5cm}
+\begin{pspicture}[showgrid=false](0,-0.75)(6,6)
+    \psframe*[linecolor=yellow,opacity=0.5](-.5,-0.75)(7,7)
+    \psaxes[linecolor=lightgray, ticks=none,labels=none]{->}(0,0)(0,-0.5)(6.5,6.5)[Good $1$,0][Good $2$,90]
+    \psset{algebraic,linewidth=1.5pt,linecolor=red}
+    \psplot{2.4}{6.1}{4-x*.66}
+    \psplot{0}{2.4}{6-x*1.5}
+    \rput(1.6,5){When $x_2 > x_1 $}
+    \rput(3.3,2.5){When $x_2 = x_1 $}
+    \rput(5.4,1){When $x_2 < x_1 $}
+	\rput(5,5.5){Upper Contour Set: }
+	\rput(5,5){$\{y  \in X: y \succsim x \}$}
+	\rput(1.22,1.5){Lower Contour Set: }
+	\rput(1.2,1){$\{y  \in X: x \succsim y \}$}
+\end{pspicture}
+\\
+\\
+(a) In the above set the red line represents the indifference set, the upper contour set is represented by the area above the graph and the lower contour set is represented by the area under the graph. The reference bundle in this case is $x = (x_1, x_2)$.
+\\
+\\
+(b) For this part we will first check for completeness. i.e we will show $\forall x, y \in X, x \gtrsim y \lor y \gtrsim x. $  \\ \\
+For any arbitrary, $x = (x_1, x_2) \in X \land  y= (y_1, y_2) \in X $ we can have only 2 cases. 
+\\
+\\Case 1, where min $\{3 x_1 + 2 x_2, 2 x_1 + 3 x_2\} \geq $ min $\{3 y_1 + 2 y_2, 2 y_1 + 3 y_2\} \implies x \gtrsim y, $ or case 2, where min $\{3 y_1 + 2 y_2, 2 y_1 + 3 y_2\} \geq $ min $\{3 x_1 + 2 x_2, 2 x_1 + 3 x_2\} \implies y \gtrsim x.$
+\\
+\\
+Therefore, $\forall x, y \in \mathbb{R}^{2}, x \gtrsim y \lor y \gtrsim x \iff $ the preference relation exhibits completeness.
+\\
+\\
+\\
+Next, we will check for transitivity.i.e. $\forall x, y, z \in X, (x \gtrsim y \land y \gtrsim z) \implies x \gtrsim z.$
+\\
+\\
+For any arbitrary, $x = (x_1, x_2) \in X \land  y= (y_1, y_2) \in X \land z = (z_1, z_2) \in X$, 
+\\
+\\
+If $ (x \succsim y \land y \succsim z) \implies $ min $\{3 x_1 + 2 x_2, 2 x_1 + 3 x_2\} \geq $ min $\{3 y_1 + 2 y_2, 2 y_1 + 3 y_2\} \land $  min $\{3 y_1 + 2 y_2, 2 y_1 + 3 y_2\} \geq $ min $\{3 z_1 + 2 z_2, 2 z_1 + 3 z_2\}\implies $  min $\{3 x_1 + 2 x_2, 2 x_1 + 3 x_2\} \geq $ min $\{3 z_1 + 2 z_2, 2 z_1 + 3 z_2\} \implies  x \succsim z.$
+\\
+\\
+Therefore, $\forall x, y, z \in \mathbb{R}^{2}, (x \succsim y \land y \succsim z) \implies x \succsim z$ and thus the preference relation exhibits transitivity.
+\\
+\\
+Next, we will prove convexity i.e. if $x \succsim y \implies \forall \alpha \in (0,1), \alpha x + (1-\alpha) y \succsim y $ 
+\\
+\\
+$ \alpha x + (1-\alpha) y = \alpha x - \alpha y + y = (\alpha (x_1-y_1) + y_1, \alpha (x_2-y_2) + y_2)$
+\\
+\\
+And since $x \succsim y \implies x_1 \geq y_1 \land x_2 \geq y_2 \implies \alpha (x_1-y_1) + y_1 \geq y_1 \land \alpha (x_2-y_2) + y_2 \geq y_2$ 
+\\
+\\
+Therefore min$\{3(\alpha (x_1-y_1) + y_1) + 2( \alpha (x_2-y_2) + y_2), 2(\alpha (x_1-y_1) + y_1) + 3( \alpha (x_2-y_2) + y_2) \} \geq $ min $\{3 y_1 + 2 y_2, 2 y_1 + 3 y_2\} \implies \alpha x + (1-\alpha) y \succsim y$
+\\
+\\
+Thus the preference relation is convex.
+\end{problem}
+\begin{problem}{3}. 
+\\
+\\
+If a preference relation exhibits monotonicity we have: \\ $\forall x, y \in X,$ if $ \forall i, x_i \geq y_i \implies x \succsim y.$
+\\
+\\
+(Note: $x_i $ represents the i-th elements of bundle x.) 
+\\
+\\
+Whereas, if a preference relation exhibits strong monotonicity we have: \\ $\forall x, y \in X,$ if $ \forall i, x_i \geq y_i \implies x \succ y.$
+\\
+\\
+In comparison strong monotonicity $ \implies $ monotonicity, however monotonicity $ \centernot \implies $ strong monotonicity.
+\\
+\\
+Example let, $p = (4,1), q = (2,2) $ and let a strong monotone preference relation be defined by $x\succsim y \iff x_1 + x_2 \geq y_1 + y_2. $ Therefore in this case $p \succsim q. $ \\ \\
+However if the monotone (but not strong) relation is defined by $x \succsim y \iff min(x_1 , x_2) \geq min(y_1, y_2). $ Then $ p \nsucc q $
+\end{problem}
+\begin{problem}{4}.
+\\
+\\
+As hinted in the question we will proceed by first showing the lexicographic preference relation is rational and then showing every rational preference relation yields a choice structure that satisfies WARP. 
+\\
+\\
+In order to show the lexicographic preference relation is rational we will first check for completeness. i.e we will show $\forall x, y \in \mathbb{R}^{m}, x \succsim y \lor y \succsim x. $  
+\\
+\\
+(Note: $ x, y \in  \mathbb{R}^{m}$ where $ m \in \mathbb{N} $ i.e. bundles can have any arbitrary number of goods)  
+\\
+\\
+Therefore, for any arbitrary, $x = (x_1, x_2,..., x_m) \in \mathbb{R}^{m} \land  y= (y_1, y_2, ..., y_m) \in \mathbb{R}^{m}$ we can have only 2 cases. 
+\\
+\\Case 1, where $ \exists N \in  \mathbb{N}, N \leq m, \forall n \in \mathbb{N}, n < N, (x_n = y_n \land x_N \geq y_N) \implies x \succsim y $  
+\\
+\\
+Or, case 2, where $ \exists N \in  \mathbb{N}, N \leq m, \forall n \in \mathbb{N}, n < N, (x_n = y_n \land x_N \leq y_N) \implies y \succsim x $ 
+\\
+\\
+Therefore, $\forall x, y \in \mathbb{R}^{m}, x \succsim y \lor y \succsim x \iff $ the preference relation exhibits completeness.
+\\
+\\
+Next we will check for transitivity i.e. $\forall x, y, z \in \mathbb{R}^{m}, (x \succsim y \land y \succsim z) \implies x \succsim z.$
+\\
+\\
+For any arbitrary, $x = (x_1, x_2, ..., x_m) \in \mathbb{R}^{m} \land  y= (y_1, y_2, ... y_m) \in \mathbb{R}^{m} \land z = (z_1, z_2, ...,z_m) \in \mathbb{R}^{m}$, 
+\\
+\\
+If $ (x \succsim y \land y \succsim z) $ we have the below:
+\\
+\\
+$ \exists N_1 \in  \mathbb{N}, N_1 \leq m, \forall n \in \mathbb{N}, n < N_1, (x_n = y_n \land x_{N_1} \geq y_{N_1})  $  
+\\
+\\
+And, $ \exists N_2 \in  \mathbb{N}, N_2 \leq m, \forall n \in \mathbb{N}, n < N_2, (y_n = z_n \land y_{N_2} \geq z_{N_2}) $ 
+\\
+\\
+Thus if we choose $N = $ min $\{N_1, N_2 \}, $ we get 
+\\
+\\
+$ \exists N \in  \mathbb{N}, N \leq m, \forall n \in \mathbb{N}, n < N, (x_n = z_n \land x_{N} \geq z_{N}) \implies x \succsim z$
+\\
+\\
+Therefore, $\forall x, y, z \in \mathbb{R}^{m}, (x \succsim y \land y \succsim z) \implies x \succsim z$ and thus the preference relation exhibits transitivity.
+\\
+\\
+Finally since preference relation exhibits completeness and transitivity, it is a rational relationship. 
+\\
+\\
+Next we will show that every rational preference relation implies a choice structure that satisfies WARP\\ .i.e $ \forall B, B^0 \subset \beta $ if $ x, y \in B$, $ x, y \in B^0  $, $ x \in c(B) $ and $ y \in c(B^0) \implies x \in c(B^0). $ 
+\\
+\\
+Since $ x, y \in B \land x \in c(B) \implies x \succsim y $ 
+\\
+\\
+Further, since $ x, y \in B^0 \land y \in c(B^0) \implies \forall z \in B^0, y \succsim z $ and by transitivity $ x \succsim z. $
+\\
+\\
+Therefore, $ \forall B, B^0 \subset \beta $ if $ x, y \in B$, $ x, y \in B^0  $, $ x \in c(B) $ and $ y \in c(B^0) \implies x \in c(B^0). $ i.e. every rational preference relation implies a choice structure that satisfies WARP. And since lexicographic preference relation is rational, it satisfies WARP. 
+\\
+\end{problem}
+\begin{problem}{5}. 
+\\
+\\
+From the question we know $ C(\{x,y,z \}) = \{x\}$
+\\
+\\
+Further since $ \{x,y\} , \{x, y, z\} \in \beta , \{y\} \in C(\{x,y,z \})$ only if $ \{y\} \in C(\{x,y \})$.
+\\
+\\
+However $C(\{x,y \}) = \{ x\} \implies \{ y\} \notin C(\{x,y \}) \implies \{ y\} \notin C(\{x,y, z \}) \implies C(\{x,y, z \}) = \{ x\} , \{ x\} $ or $ \{ x, z \}  $
+\\
+\\
+\end{problem}
+\begin{problem}{6}. 
+\\
+\\
+\textbf{(a)} We need to show that $\forall x, y \in X, x \succ^* y \iff  x \succ^* * y$.
+\\
+\\
+$ \therefore $ we will start by proving $ ( \implies )$ 
+\begin{flalign*} 
+\text{If } x \succ^* y & \implies \exists B \in \beta  \text{ s.t } x, y \in B, x \in C(B) \text{ and } y \notin C(B) &\\ 
+ & \implies x \succsim^* y  \text{, however } \nexists B \in \beta  \text{ s.t }. x, y \in B, y \in C(B) \text{ and } x \notin C(B) & \\
+ & \implies x \nsucceq^* y & 
+\end{flalign*}  
+$\therefore x \succsim^* y$ but not $ y \succsim^* x \implies x\succ^{* *}y$ 
+\\
+\\
+\\
+Next we will prove $ ( \Longleftarrow )$ 
+\begin{flalign*} 
+\text{If } x \succ^{**} y & \implies x \succsim^* y \text{ but not } y \succsim^* x & \\ 
+& \implies \exists B \in \beta  \text{ s.t } x, y \in B, x \in C(B) \text{ and } y \notin C(B) & \\ 
+& \implies x \succ^{*} y & 
+\end{flalign*} 
+Therefore since we proved $ ( \implies )$  and $ ( \Longleftarrow ), \forall x, y \in X, x \succ^* y \iff  x \succ^* * y$ 
+\\
+\\
+If the weak axiom is not satisfied the statement will not hold. 
+\\
+\\
+\\
+\textbf{(b)} $ \succ^{*} $ is not necessarily transitive. 
+\\
+\\
+For example if $ x \succ^{*} y $ and $ y \succ^{*} z $ implies the two statements below: 
+\\
+\\
+1. $\exists B^1 \in \beta  \text{ s.t } x, y \in B^1, x \in C(B^1) \text{ and } y \notin C(B^1)  $
+\\
+\\
+2. $ \exists B^2 \in \beta  \text{ s.t }  y, z \in B^2, y \in C(B^2) \text{ and } z \notin C(B^2)  $
+\\
+\\
+However, $ z, x $ may or may not be in a set $B $. Therefore $ x \succ^{*} y $ and $ y \succ^{*} z $ does not imply $ x \succ^{*} z $  i.e  $ \succ^{*} $ is not necessarily transitive. 
+\\
+\\
+\textbf{(c)} If $ \beta $ includes all three elements subset $ \implies $ if $ B $ is a subset of  $ \beta $, then $x, z, y \in B $. 
+\\
+\\
+Therefore, using the result for part b and extending upon it. We have if $ x \succ^{*} y $ and $ y \succ^{*} z $ implies the two statements below: 
+\\
+\\
+1. $\exists B^1 \in \beta  \text{ s.t } x, y \in B^1, x \in C(B^1) \text{ and } y \notin C(B^1)  $
+\\
+\\
+2. $ \exists B^2 \in \beta  \text{ s.t }  y, z \in B^2, y \in C(B^2) \text{ and } z \notin C(B^2)  $
+\\
+\\
+Further since $ \exists B \in \beta  \text{ s.t }  x, z \in B \implies x \in C(B) \text{ and } z \notin C(B)  \implies x \succ^{*} z. $ 
+\\
+\\
+Therefore transitivity holds if $ \beta $ includes all three elements subset.
+\end{problem}
+\end{document}
