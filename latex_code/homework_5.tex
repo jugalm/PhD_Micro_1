@@ -1,0 +1,180 @@
+%Homework Template
+%----------------------------------------
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts,bigints}
+\usepackage{ifthen}
+\usepackage{pbox}
+\usepackage{romannum}
+\usepackage{centernot}
+\usepackage{color,soul}
+\usepackage{pgfplots}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{ifthen}
+\usepackage{pbox}
+\usepackage{romannum}
+\usepackage{centernot}
+\usepackage{color,soul}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{fancyhdr}
+\usepackage{pst-plot}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+%SetFonts
+\pagestyle{fancy}
+\rhead{Homework 5}
+\lhead{Jugal Marfatia}
+ 
+%----------------------------------------
+% Assignment Title and Your Name
+%----------------------------------------
+\title{Homework 5}
+\author{Jugal Marfatia \\ \\Microeconomics-1 \\ }
+\date{September 27, 2017}
+%----------------------------------------
+\begin{document}
+\maketitle
+
+%========================================
+%	START ANSWERS HERE
+%========================================
+\begin{problem}{1}
+In order to analyze substitution and income effect using the slutsky's equation we first need to derive the hicksian and walrasian demand. The EMP the worker faces is below:
+\\
+.\hspace{40mm}$\displaystyle \min_{y, z} \{py - wz\} $ subject to $ v(y, z) = \bar{u} $
+\\
+\\
+Where the variables correspond to the one's described in the question and $v(y, z) = \bar{u} $ is the utility level the worker is trying to reach. 
+\\
+\\
+Therefore, using the hicksian demands $z^H(w, p, \bar{u})  $ and $y^H(w, p, \bar{u})  $, the expenditure function is below:. 
+\\
+.\hspace{40mm}$\displaystyle e(w, p, \bar{u}) =  p y^H(w, p, \bar{u}) - w z^H(w, p, \bar{u}) $
+\\
+\\
+Further the walrasian demand is,
+\\
+\\
+.\hspace{40mm}$\displaystyle z^W(w, p, e(w, p, \bar{u})) = z^H(w, p, \bar{u})  $
+\\
+\\
+Next by differentiating both the sides we get:
+\\
+\\
+.\hspace{30mm}$\ddfrac{\partial z^W}{\partial w} +  \ddfrac{\partial z^W}{\partial e} \ddfrac{\partial e}{\partial w} = \ddfrac{\partial z^H}{\partial w} \iff \ddfrac{\partial z^W}{\partial w} =  \ddfrac{\partial z^H}{\partial w} - \ddfrac{\partial z^W}{\partial e} \ddfrac{\partial e}{\partial w} $
+\\
+\\
+\\
+Further since $e =  p y^H(w, p, \bar{u}) - w z^H(w, p, \bar{u}) \implies \ddfrac{\partial e}{\partial w} = - z^H(w, p, \bar{u})$
+\\
+\\
+\\
+Next plugging it back into the previous equation we obtain the below slutsky's equation: 
+\\
+\\
+.\hspace{50mm}$  \ddfrac{\partial z^W}{\partial w} =  \ddfrac{\partial z^H}{\partial w} + \ddfrac{\partial z^W}{\partial e} z^H $
+\\
+\\
+\\
+Using the slutsky's equation  $\ddfrac{\partial z^H}{\partial w} > 0$ is the substitution effect: This implies that and increase in wages will lead to the worker supplying more hours of labor, given his wealth is adjusted in order to guarantee the utility level as before.\\
+\\
+\\
+Lastly, $\ddfrac{\partial z^H}{\partial e} z^H$ is the income effect: 
+\\
+\\
+If $\ddfrac{\partial z^H}{\partial e} z^H > 0 \implies$ the increase in wages will increase the labor supply by the worker.
+\\
+\\
+else if $\ddfrac{\partial z^H}{\partial e} z^H < 0\implies$ the increase in wages will decrease the labor supply by the worker.
+\\
+\\
+Putting together the income and the substitution effect, the question of whether the worker will work more or less after the increase in wages depends on the magnitude of the two effects. If both effects are positive then definitely the worker will work more hours. Whereas if the the income effect is negative and is greater in magnitude than the substitution effect the worker will work less, on the contrary if the magnitude of the substitution effect is relatively larger than income effect the worker will work more. 
+\\
+\end{problem}
+\begin{problem}{2}. \\ \\
+\textbf{a.} Let the new price vector is $p^1 = \theta p^0 $ and since the expenditure function is homogenous of degree 1 with respect to prices we have the below.
+\\
+\\
+$CV = e(p^1, u^0) - e( p^0, u^0) = e(\theta p^0, u^0) - e( p^0, u^0) = \theta (p^0, u^0) - e( p^0, u^0) = \theta w - w = w (\theta - 1) $
+\\
+\\
+\\
+\textbf{b.} Since the new price vector be $p^1 = \theta p^0 \iff \frac{1}{\theta} p^1 = p^0$
+\\
+\\
+$EV = e(p^1, u^1) - e( p^0, u^1) = e(p^0, u^0) - e( \frac{1}{\theta} p^1, u^1) = w- \frac{1}{\theta} e( p^1, u^1) =  w - \frac{1}{\theta} w = w (1 - \frac{1}{\theta})$
+\\
+\\
+\end{problem}
+\pagebreak
+\begin{problem}{3}In order to analyze the two types of taxes we will first find the walrasian demand and indirect utility function using the below Lagrangian. \\
+\begin{flalign*} 
+L& = x_1^{1/2} x_2^{1/2}  + \lambda \big[ w -p_1 x_1 - p_2 x_2 \big]& \\ \\
+\text{F.O.C is below: }
+\\
+\\
+\frac{dL}{dx_1} & : \frac{1}{2} x_1^{-1/2} x_2^{1/2}  = \lambda p_1 & (1)  \\ \\
+\frac{dL}{dx_2} & : \frac{1}{2} x_1^{1/2} x_2^{-1/2}  = \lambda p_2 & (2)  \\ \\
+\frac{dL}{d \lambda} & : w =  p_1 x_1 + p_2 x_2& (3)\\ \\
+\end{flalign*} 
+Dividing equation 1 and 2 we get: 
+\\
+\\
+$\ddfrac{\lambda \frac{1}{2} x_1^{-1/2} x_2^{1/2}}{\lambda \frac{1}{2}  x_1^{1/2} x_2^{-1/2}} =\ddfrac{p_1}{p_2} \iff x_2 = \ddfrac{p_1}{p_2} x_1$ \\
+\\
+\\
+Next plugging $x_2 $ back into the equation 3 we get:
+\\
+\\
+$w =  p_1 x_1 + p_2 \ddfrac{p_1}{p_2} x_1 \iff x_1^w = \ddfrac{w}{2 p_1}$
+\\
+\\
+\\Further using symmetry we get:
+\\
+\\
+$x_2^w = \ddfrac{w}{2 p_2}$
+\\
+\\
+Further the indirect utility function is:
+\\
+\\
+$v(p,w) = \ddfrac{w}{2 (p_1 p_2)^{\frac{1}{2}}} $
+\\
+\\
+\\
+The tax collected in both cases is equal to $0.4 w $. Where $w$ is the initial level of wealth for the individual.  
+\\
+\\
+Therefore, if the tax is collected via sales tax on $x_1$, than:
+\\
+\\
+$0.4 w = tp_1 x_1^w =  tp_1 \ddfrac{w}{2 p_1(1+t)} \iff 0.8 = \ddfrac{1}{1+t}\iff \ddfrac{1}{t} = .25 \iff t = 4 $ \\
+\\
+where $ t $ is the tax rate on $x_1 $
+\\
+\\
+Next we will analyze the effect on utility from the income tax:
+\\
+\\
+$v_{income\_tax} = \ddfrac{0.6w}{2(p_1 p_2)^{\frac{1}{2}}} = 0.6 \ddfrac{w}{2(p_1 p_2)^{\frac{1}{2}}}$
+\\
+\\
+\\
+Further we will analyze the effect on utility from the sales tax:
+\\
+\\
+$v_{sales\_tax} = \ddfrac{w}{2(p_1(1+t) p_2)^{\frac{1}{2}}} =  \ddfrac{w}{ 2\sqrt{5}(p_1 p_2)^{\frac{1}{2}}} \approx 0.447 \ddfrac{w}{2(p_1 p_2)^{\frac{1}{2}}}$
+\\
+\\
+\\
+Therefore since $0.6 >  0.447  \iff 0.6 \ddfrac{w}{2(p_1 p_2)^{\frac{1}{2}}}> 0.447 \ddfrac{w}{2(p_1 p_2)^{\frac{1}{2}}} \iff v_{income\_tax} > v_{sales\_tax}$
+\\
+\\
+\\
+Thus, the income tax produces a smaller utility reduction compared to the sales tax.
+\end{problem}
+\end{document}

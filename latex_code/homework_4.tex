@@ -1,0 +1,294 @@
+%Homework Template
+%----------------------------------------
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts,bigints}
+\usepackage{ifthen}
+\usepackage{pbox}
+\usepackage{romannum}
+\usepackage{centernot}
+\usepackage{color,soul}
+\usepackage{pgfplots}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{ifthen}
+\usepackage{pbox}
+\usepackage{romannum}
+\usepackage{centernot}
+\usepackage{color,soul}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{fancyhdr}
+\usepackage{pst-plot}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+%SetFonts
+\pagestyle{fancy}
+\rhead{Homework 4}
+\lhead{Jugal Marfatia}
+ 
+%----------------------------------------
+% Assignment Title and Your Name
+%----------------------------------------
+\title{Homework 4}
+\author{Jugal Marfatia \\ \\Microeconomics-1 \\ }
+\date{September 20, 2017}
+%----------------------------------------
+\begin{document}
+\maketitle
+
+%========================================
+%	START ANSWERS HERE
+%========================================
+
+\begin{problem}{1}. \\ \\
+\textbf{a.}
+\begin{flalign*} 
+L& = p_1 x_1 + p_2 x_2  + \lambda \big[ \bar{u} - x_1^{1/2} x_2^{1/2}\big]& \\ \\
+\text{F.O.C is below: }
+\\
+\\
+\frac{dL}{dx_1} & : p_1 = \lambda \frac{1}{2} x_1^{-1/2} x_2^{1/2} & (1)  \\ \\
+\frac{dL}{dx_2} & : p_2 = \lambda \frac{1}{2} x_1^{1/2} x_2^{-1/2} & (2)  \\ \\
+\frac{dL}{d \lambda} & : \bar{u} =  x_1^{1/2} x_2^{1/2} & (3)\\ \\
+\end{flalign*} 
+Dividing equation 1 and 2 we get: 
+\\
+\\
+$\ddfrac{\lambda \frac{1}{2} x_1^{-1/2} x_2^{1/2}}{\lambda \frac{1}{2} x_1^{1/2} x_2^{-1/2}} = \ddfrac{ p_1}{ p_2} \iff  x_1 = x_2 \ddfrac{p_2}{ p_1} $
+\\
+\\
+\\
+Next plugging $x_1 $ back into the equation 3 we get:
+\\
+\\
+$x_2 \bigg(\ddfrac{p_2}{ p_1}\bigg)^{\frac{1}{2}}  = \bar{u} \iff x_2^H = \bar{u}  \bigg(\ddfrac{p_1}{ p_2}\bigg)^{\frac{1}{2}}$
+\\
+\\Further using symmetry we get:
+\\
+\\
+$x_1^H = \bar{u}  \bigg(\ddfrac{p_2}{ p_1}\bigg)^{\frac{1}{2}}$
+\\
+\\
+\\
+\textbf{b.}
+The expenditure function is, 
+\\
+\\
+$e(p,u) = 2 \bar{u}$ $ p_1^{1/2 }$ $ p_2^{1/2 }$
+\\
+\\
+\textbf{c.}
+The equivalent variation is, 
+\\
+\\
+$EV = e(p_0,u_1) - e(p_1,u_1) = 200 (2^{1/2} - 1) = 82.842$
+\\
+\end{problem}
+\begin{problem}{2} .\\ \\
+Since $u(x) = x_1 +  \phi x_{-1} \iff x_1 = u(x) - \phi x_{-1} $
+\\
+\\
+Further, the expenditure function:
+\\
+\\
+$e(p, u) = p_1 x_1 + \displaystyle \sum_{i=2}^{L} p_i x_i  
+= x_1 + p_{-1} \cdot x_{-1} =  u(x) - \phi x_{-1} + p_{-1} \cdot x_{-1} $ (Since $p_1 = 1 $).
+\\
+\\
+(Note: $p_{-1} \cdot x_{-1} $ represents the dot product of the two vectors $p_{-1}$ and  $x_{-1}$) 
+\\
+\\
+Therefore,
+\\
+\\
+$CV = e(p^1, u^1) - e(p^1, u^0) = u^1(x) - \phi x_{-1} + p_{-1} \cdot x_{-1} - u^0(x) + \phi x_{-1} - p_{-1} \cdot x_{-1} =  u^1(x) - u^0(x)$ 
+\\
+\\
+$EV = e(p^0, u^1) - e(p^0, u^0) = u^1(x) - \phi x_{-1} + p_{-1} \cdot x_{-1} - u^0(x) + \phi x_{-1} - p_{-1} \cdot x_{-1} =  u^1(x) - u^0(x)$ 
+\\
+\\
+Thus, the compensating and the equivalent variation are equal when the utility
+function is quasilinear with respect to the first good.
+\\
+\pagebreak
+\end{problem}
+\begin{problem}{3}.
+ \\ \\
+\textbf{a.}
+\begin{flalign*} 
+L& =  ax_1^\alpha + bx_2 + \lambda \big[w - p_1 x_1 - p_2 x_2 \big]& \\ \\
+\text{F.O.C is below: }
+\\
+\\
+\frac{dL}{dx_1} & : a \alpha x_1^{\alpha - 1} = \lambda p_2 & (1)  \\ \\
+\frac{dL}{dx_2} & : b = \lambda p_2 & (2)  \\ \\
+\frac{dL}{d \lambda} & : w =  p_1 x_1 + p_2 x_2 & (3)\\ \\
+\end{flalign*} 
+Dividing equation 1 and 2 we get: 
+\\
+\\
+$\ddfrac{a \alpha x_1^{\alpha - 1}}{ b } = \ddfrac{ p_1}{ p_2} \iff  x_1^w = \bigg(\ddfrac{bp_1}{ a \alpha p_2}\bigg)^{\frac{1}{\alpha - 1}}$
+\\
+\\
+\\
+Next plugging $x_1 $ back into the equation 3 we get:
+\\
+\\
+$x_2^w  = \frac{w}{p_2} - \bigg(\ddfrac{bp_1^\alpha}{ a \alpha p_2^\alpha}\bigg)^{\frac{1}{\alpha - 1}}$
+\\
+\\
+\\
+\textbf{b.}
+\begin{flalign*} 
+L& =  p_1 x_1 + p_2 x_2 + \lambda \big[\bar{u} -  ax_1^\alpha - bx_2  \big]& \\ \\
+\text{F.O.C is below: }
+\\
+\\
+\frac{dL}{dx_1} & : \lambda a \alpha x_1^{\alpha - 1} =  p_2 & (1)  \\ \\
+\frac{dL}{dx_2} & : \lambda b = p_2 & (2)  \\ \\
+\frac{dL}{d \lambda} & : \bar{u} =  ax_1^\alpha + bx_2& (3)\\ \\
+\end{flalign*} 
+Dividing equation 1 and 2 we get: 
+\\
+\\
+$\ddfrac{a \alpha x_1^{\alpha - 1}}{ b } = \ddfrac{ p_1}{ p_2} \iff  x_1^H = \bigg(\ddfrac{bp_1}{ a \alpha p_2}\bigg)^{\frac{1}{\alpha - 1}}$
+\\
+\\
+\\
+Next plugging $x_1 $ back into the equation 3 we get:
+\\
+\\
+$x_2^H  =\frac{\bar{u}}{p_2} - \bigg(\ddfrac{bp_1^\alpha}{ a \alpha p_2^\alpha}\bigg)^{\frac{1}{\alpha - 1}}$
+\\
+\\
+\\
+\textbf{c.} .\\ 
+\\
+AV = $ \bigints_{1}^2 \bigg(\ddfrac{bp_1}{ a \alpha p_2}\bigg)^{\frac{\alpha }{\alpha - 1}} dp_1 = \bigints_{1}^2 \bigg(\ddfrac{2}{  p_1}\bigg)^{\frac{\alpha }{2}} dp_1  = \bigg[ -\ddfrac{4}{p_1} \bigg]_1^2 = 2$ 
+\\
+\\
+\\
+CV = $ \bigints_{1}^2 \bigg(\ddfrac{bp_1}{ a \alpha p_2}\bigg)^{\frac{\alpha }{\alpha - 1}} dp_1 = \bigints_{1}^2 \bigg(\ddfrac{2}{  p_1}\bigg)^{\frac{\alpha }{2}} dp_1  = \bigg[ -\ddfrac{4}{p_1} \bigg]_1^2 = 2$ 
+\\
+\\
+\\
+EV = $ \bigints_{1}^2 \bigg(\ddfrac{bp_1}{ a \alpha p_2}\bigg)^{\frac{\alpha }{\alpha - 1}} dp_1 = \bigints_{1}^2 \bigg(\ddfrac{2}{  p_1}\bigg)^{\frac{\alpha }{2}} dp_1  = \bigg[ -\ddfrac{4}{p_1} \bigg]_1^2 = 2$ 
+\\
+\\
+\end{problem}
+\pagebreak
+\begin{problem}{4}.
+ \\ \\
+\textbf{a.} From the utility function we know, that $q_2(q_1) =  u + 1 -  q_1^2$
+\\
+\\
+Therefore, $q_2'(q_1) = - 2 q_1 < 0$ and $q_2''(q_1) = - 2 < 0 \implies q_2(q_1)$ is strictly decreasing and concave. Which means the walrasian demand will be a corner solution. 
+\\
+\\
+Therefore we could have two cases:
+\\
+\\
+Case 1. 
+\\
+\\
+$q_1 = \ddfrac{w}{p_1}  $ and $q_2 = 0 $ if $ \ddfrac{w^2}{p_1^2} -1 > \ddfrac{w}{p_2} -1\iff \ddfrac{w^2}{p_1^2} > \ddfrac{w}{p_2}$
+\\
+\\
+Case 2. 
+\\
+\\
+$q_1 = 0 $ and $q_2 = \ddfrac{w}{p_2}  $ if $ \ddfrac{w^2}{p_1^2} -1 \leq \ddfrac{w}{p_2} -1\iff \ddfrac{w^2}{p_1^2} \leq \ddfrac{w}{p_2}$
+\\
+\\
+\\
+Further, the corresponding indirect utility is:
+\\
+\\
+From case 1,
+\\
+\\
+$v(p,w) = \ddfrac{w^2}{p_1^2} -1 $ if $ \ddfrac{w^2}{p_1^2} > \ddfrac{w}{p_2}$
+\\
+\\
+From case 2,
+\\
+\\
+$v(p,w) = \ddfrac{w}{p_2} -1 $ if $ \ddfrac{w^2}{p_1^2} \leq \ddfrac{w}{p_2}$
+\\
+\\
+\\
+\textbf{b.} Since the utility $q_2(q_1)  $ is strictly decreasing and concave, the hicksian demand will also have corner solutions. 
+\\
+\\
+Therefore we could have two cases:
+\\
+\\
+Case 1. 
+\\
+\\
+$q_1^H = \sqrt{\bar{u} +1}   $ and $q_2^H = 0 $ if $ p_1\sqrt{\bar{u} +1} < p_2 ( \bar{u} +1)$
+\\
+\\
+Case 2. 
+\\
+\\
+$q_1^H = 0 $ and $q_2^H = \bar{u} +1  $ if $ p_1\sqrt{\bar{u} +1} \geq p_2 ( \bar{u} +1)$
+\\
+\\
+\\
+Further, the corresponding expenditure function is:
+\\
+\\
+From case 1,
+\\
+\\
+$e(p,u) = p_1\sqrt{\bar{u} +1} $ if $ p_1\sqrt{\bar{u} +1} < p_2 ( \bar{u} +1)$
+\\
+\\
+From case 2,
+\\
+\\
+$e(p,u) = p_2\bar{u} +1 $ if $ p_1\sqrt{\bar{u} +1} \geq p_2 ( \bar{u} +1)$
+\\
+\\
+\\
+\textbf{c.} For this part we initially have $w = 6, p_1 = 4, p_2 = 3$
+\\
+\\
+Therefore, $\ddfrac{w^2}{p_1^2} = 2.25 > \ddfrac{w}{p_2} = 2 $, which implies $u^0 = 2.25 -1 = 1.25 $
+\\
+\\
+Further, $ p_1\sqrt{\bar{u} +1} = 6 < p_2 ( \bar{u} +1) = 6.75 $, which implies $e(p^0, u^0) = 6$ 
+\\
+\\
+Next when prices increase by 50 \%, $ p_1\sqrt{\bar{u} +1} = 9 < p_2 ( \bar{u} +1) = 10.125 $, which implies $e(p^1, u^0) = 9$ 
+\\
+\\
+Thus, CV = $ 9 - 6 = \$ 3$. Intuitively this tells us that the $ 50 \% $ increase in the prices should be compensated by $ \$ 3 $ increase in the wealth level, which is equivelant to $  50\% $ increase from the initial wealth level. 
+\\
+\\
+\textbf{d.}
+When the prices increased by $ 50 \%, $ then we reached $ p_1 = 6, p_2 = 4.5$. Thus with the new prices $\ddfrac{w^2}{p_1^2} = 1 \leq \ddfrac{w}{p_2} = 1.33 $. Which implies, the walrasian demand for the consumer is $q_1 = 0 $ and $q_2 = \ddfrac{w}{p_2}  $. 
+\\
+\\
+Further, with the initial price of $p_2 $, $q_1 $ was preferred as long as below:
+\\
+\\
+$\ddfrac{w^2}{p_1^2}  > \ddfrac{w}{p_2} \iff \ddfrac{36}{p_1^2} > \ddfrac{6}{3} \iff p_1 < \sqrt{18} $.
+\\
+\\
+Therefore, putting the above information together:
+\\
+\\
+AV = $ \bigints_{4}^{\sqrt{18}} \bigg(\ddfrac{6}{ p_1}\bigg)dp_1 + \bigints_{\sqrt{18}}^{6} 0dp_1 +  \bigints_{3}^{4.5} \bigg(\ddfrac{2}{  p_2}\bigg) dp_2  = \bigg[ 6 \ln (p_1)\bigg]_4^{\sqrt{18}} + \bigg[ 6 \ln (p_2)\bigg]_3^{4.5}$
+\\
+\\
+\\
+Therefore AV $= 6\bigg[ \ln(\sqrt{18}) - \ln(4)  + \ln(4.5) - \ln(3) \bigg] \approx 2.786$. \\
+\\
+The interpretation of the AV, is that in the first term we integrated walrasian demand of good 1 from 4 to $ \sqrt{18} $ because the consumer will prefer good 1 given price of good 1 is below $ \sqrt{18} $. Thus the second term is 0 because for price of good 1 greater than $ \sqrt{18} $ the walrasian demand for good 1 = 0. Lastly in the third term we cacluate the area under the curve to evaluate the variance in the price of good 2. 
+\end{problem}
+\end{document}

@@ -1,0 +1,499 @@
+%Homework Template
+%----------------------------------------
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{ifthen}
+\usepackage{pbox}
+\usepackage{romannum}
+\usepackage{centernot}
+\usepackage{color,soul}
+\usepackage{pgfplots}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{ifthen}
+\usepackage{pbox}
+\usepackage{romannum}
+\usepackage{centernot}
+\usepackage{color,soul}
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{fancyhdr}
+\usepackage{pst-plot}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+
+%SetFonts
+\pagestyle{fancy}
+\rhead{Homework 3}
+\lhead{Jugal Marfatia}
+ 
+%----------------------------------------
+% Assignment Title and Your Name
+%----------------------------------------
+\title{Homework 3}
+\author{Jugal Marfatia \\ \\Microeconomics-1 \\ }
+\date{September 13, 2017}
+%----------------------------------------
+\begin{document}
+\maketitle
+
+%========================================
+%	START ANSWERS HERE
+%========================================
+
+\begin{problem}{1}. \\ \\
+\textbf{a.}
+\begin{flalign*} 
+U(x_1, x_2)& = \big[\alpha_1 x_1^\rho + \alpha_2 x_2^\rho \big]^{1/ \rho} & \\ \\
+\text{Therefore, if $\rho = 1 $}
+\\
+\\
+& U= \big[\alpha_1 x_1 + \alpha_2 x_2\big] & &
+\\ \\
+\iff & x_1= \ddfrac{U}{\alpha_1}  - \ddfrac{\alpha_2}{\alpha_1} x_2 & 
+\end{flalign*} 
+\text{Therefore, the indifference curves are linear}
+\\
+\\
+\textbf{b.}
+\begin{flalign*} 
+\log(U)& = \frac{1}{\rho} \log\big[\alpha_1 x_1^\rho + \alpha_2 x_2^\rho \big]^{1/ \rho} & \\ 
+\text{Therefore, when $\rho \rightarrow 0 $} 
+\\
+\log(U)& = \lim_{\rho \to 0 }\frac{1}{\rho} \log\big[\alpha_1 x_1^\rho + \alpha_2 x_2^\rho \big]^{1/ \rho} & \\ \\
+\text{Using L'Hopital rule we get }
+\\
+\log(U)& = \lim_{\rho \to 0 } \ddfrac{\alpha_1 x_1^\rho \log(x_1)+ \alpha_2 x_2^\rho \log(x_1)}{\alpha_1 x_1^\rho + \alpha_2 x_2^\rho}& \\ \\
+& = \ddfrac{\alpha_1  \log(x_1)+ \alpha_2  \log(x_1)}{\alpha_1 + \alpha_2} = \log(x_1^{\alpha_1} x_2^{\alpha_2}) & \\ 
+\end{flalign*} 
+Therefore, when $\rho \rightarrow 0,  \log(U) = \log(x_1^{\alpha_1} x_2^{\alpha_2}) \iff U = x_1^{\alpha_1} x_2^{\alpha_2}.$
+\\
+\\
+\\
+\textbf{c.} We can prove this by first assuming that $ x_1 \geq x_2 $ and then showing $\big[\alpha_1 x_1^\rho + \alpha_2 x_2^\rho \big]^{1/ \rho} = min\{ x_1, x_2 \} = x_2$ when $\rho \to \infty $
+\begin{flalign*} 
+x_1\geq x_2 & \iff x_1^\rho \leq x_2^\rho \text{ \hspace{10mm} (Since  $\rho< 0$)} \\ \\
+ & \iff \alpha_1 x_1^\rho \leq \alpha_1 x_2^\rho \text{ \hspace{8mm} (Since  $ \alpha_1 \geq 0$)} \\ \\ 
+  & \iff \alpha_1 x_1^\rho  + \alpha_2 x_2^\rho \leq \alpha_1 x_2^\rho + \alpha_2 x_2^\rho \\ \\ 
+    & \iff \big[\alpha_1 x_1^\rho  + \alpha_2 x_2^\rho\big]^{\frac{1}{p}} \geq \big[\alpha_1 x_2^\rho + \alpha_2 x_2^\rho \big]^{\frac{1}{p}} \text{ \hspace{4mm} (Since  $1/\rho< 0$)} \\ \\ 
+& \iff \big[\alpha_1 x_1^\rho  + \alpha_2 x_2^\rho\big]^{\frac{1}{p}} \geq \big[(\alpha_1 + \alpha_2) x_2^\rho \big]^{\frac{1}{p}} \text{ \hspace{4mm}} (1)\\  \\
+\end{flalign*} 
+Further we also have the below:
+\begin{flalign*} 
+\alpha_2 x_2^\rho\leq \alpha_1 x_1^\rho  + \alpha_2 x_2^\rho & \iff \big[ \alpha_2 x_2^\rho\big]^{\frac{1}{p}} \geq \big[\alpha_1 x_2^\rho + \alpha_2 x_2^\rho \big]^{\frac{1}{p}} \text{ \hspace{4mm}} (2)\\ \\
+\end{flalign*} 
+Therefore combining equation 1 and 2 we get the below: 
+\begin{flalign*} 
+& \big[ \alpha_2 x_2^\rho\big]^{\frac{1}{p}} \geq \big[\alpha_1 x_2^\rho + \alpha_2 x_2^\rho \big]^{\frac{1}{p}} \geq \big[(\alpha_1 + \alpha_2) x_2^\rho \big]^{\frac{1}{p}} \\ \\
+\iff & \lim_{\rho \to -\infty} \big[ \alpha_2 x_2^\rho\big]^{\frac{1}{p}} \geq \lim_{\rho \to -\infty} \big[\alpha_1 x_2^\rho + \alpha_2 x_2^\rho \big]^{\frac{1}{p}} \geq \lim_{\rho \to -\infty} \big[(\alpha_1 + \alpha_2) x_2^\rho \big]^{\frac{1}{p}} \\ \\
+\iff & x_2 \geq \lim_{\rho \to -\infty} \big[\alpha_1 x_2^\rho + \alpha_2 x_2^\rho \big]^{\frac{1}{p}} \geq x_2 \\ \\
+\implies & \lim_{\rho \to -\infty} \big[\alpha_1 x_2^\rho + \alpha_2 x_2^\rho \big]^{\frac{1}{p}} = x_2 \\
+\end{flalign*} 
+Therefore, $\big[\alpha_1 x_1^\rho + \alpha_2 x_2^\rho \big]^{1/ \rho} = min\{ x_1, x_2 \} $ when $\rho \to \infty $ and thus represents two goods that are perfect complements.  \\
+\end{problem}
+\begin{problem}{2}. \\ \\
+First we need to find indirect utility, $ v(p, w) $, by setting $ u = v(p, w) $, in the expenditure function. 
+\begin{flalign*} 
+w&   = g(p) + \big[ v(p, w) +f(p) \big] \iff v(p, w)  = \ddfrac{w - g(p)}{ f(p)} & 
+\end{flalign*} 
+Next we need to find Walrasian Demand, using Roy's identity $ x_i(p, w) = - \ddfrac{\frac{\partial v(p,w)}{\partial p_i} }{\frac{\partial v(p,w)}{\partial w}} $
+\\
+\\
+\begin{flalign*} 
+\frac{\partial v(p,w)}{\partial p_i} & =   \ddfrac{-f(p) g_{p_i}(p) - (w - g(p)) f_{p_i}(p) }{f(p)^2}  \text{ \hspace{10 mm} and \hspace{10 mm}} \frac{\partial v(p,w)}{\partial w} =   \ddfrac{1}{f(p)}  
+\\
+\end{flalign*} 
+(Note: $  g_{p_i}(p) = \ddfrac{\partial g(p)}{\partial p_i}$ and $f_{p_i}(p) = \ddfrac{\partial f(p)}{\partial p_i} $).
+\\
+\\
+\\
+Next, Using the above we get:
+\\
+\\
+\begin{flalign*} 
+x_i = - \ddfrac{\frac{\partial v(p,w)}{\partial p_i} }{\frac{\partial v(p,w)}{\partial w}} & =   \ddfrac{f(p) g_{p_i}(p) + (w - g(p)) f_{p_i}(p) }{f(p)} = g_{p_i}(p) + \frac{f_{p_i}(p) }{f(p)} (w- g(p)) \\ \\
+& = g_{p_i}(p) + \frac{f_{p_i}(p) }{f(p)} w- \frac{f_{p_i}(p) }{f(p)} g(p) \\ 
+\end{flalign*} 
+Therefore, $ \frac{\partial x_i}{\partial w} = \frac{f_{p_i}(p) }{f(p)} $
+\\
+\\
+Next we need to check what happens to $\epsilon_{x_i, w} = \frac{\partial x_i}{\partial w} * \frac{w}{x_i} $, when $w \to \infty $  \\
+\begin{flalign*} 
+\lim_{w \to \infty } \epsilon_{x_i, w}& = \lim_{w \to \infty } \frac{f_{p_i}(p) }{f(p)} *  \ddfrac{w}{g_{p_i}(p) + \frac{f_{p_i}(p) }{f(p)} w- \frac{f_{p_i}(p) }{f(p)} g(p)} & \\ \\
+\text{Using L'Hopital rule we get }
+\\
+\lim_{w \to \infty } \epsilon_{x_i, w}& = \frac{f_{p_i}(p) }{f(p)} *  \ddfrac{f(p)}{ f_{p_i}(p) } = 1& \\
+\end{flalign*} 
+Therefore, since  $ \displaystyle \lim_{w \to \infty } \epsilon_{x_i, w} = 1 \implies $ a 1 \%
+increase in wealth leads to exactly a 1 \% increase in consumption.
+\\
+\\
+\end{problem}
+\begin{problem}{3}. \\ \\
+\textbf{a.}
+\begin{flalign*} 
+L& = \sum_{i=1}^{L}  \alpha_i \text{ }ln \text{ }  x_i + \lambda \big[w - \sum_{i=1}^{L }p_i x_i \big]& (1)\\ \\
+\text{F.O.C is below: }
+\\
+\\
+\frac{dL}{dx_i} & = \ddfrac{\alpha_i}{x_i} - \lambda p_i = 0 \iff \lambda = \ddfrac{\alpha_i}{p_i x_i}   \\ \\
+\end{flalign*} 
+Therefore the shadow price of wealth, $\lambda^* = \displaystyle \sum_{i=1}^{L} \ddfrac{\alpha_i}{p_i x_i}  = \ddfrac{1}{w}$. \\ \\ (Since $ \displaystyle \sum_{i=1}^{L} \alpha_i = 1 $ and $ \displaystyle \sum_{i=1}^{L} p_i x_i = w$)\\
+\\
+\\
+Next, plugging $\lambda^* $ into equation we get the Walrasian Demand $x_i(p,w) = \ddfrac{\alpha_i}{p_i} w $
+\\
+\\
+\\
+\textbf{b.}
+The indirect utility function is, 
+\\
+\\
+$v(p,w) = \displaystyle \sum_{i=1}^{L} \alpha_i \text{ } ln \bigg( \ddfrac{\alpha_i w}{p_i} \bigg) = ln(w) - \sum_{i=1}^{L} \alpha_i \text{ } ln (p_i) + \sum_{i=1}^{L} \alpha_i \text{ } ln (\alpha_i)$
+\\
+\\
+\\
+Next the shadow price of wealth $ = \ddfrac{\partial v(p,w)}{\partial w } = \ddfrac{1}{w}. $ 
+\\
+\\
+This does coincide with what we found in part (a). 
+\\
+\end{problem}
+\begin{problem}{4}. \\ \\
+From homework 2 where we had the same utility function (i.e if $ \alpha_1 = \alpha_2 =1) $, the Walrasian demand were:
+\\
+\\
+$ x_2^* = \ddfrac{w}{p_1  \bigg(\ddfrac{p_1}{ p_2}\bigg)^{\frac{1}{\rho-1}} + p_2} = \ddfrac{w \text{ }p_2^{\frac{1}{\rho-1}}}{p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}}$
+\\
+\\
+\\And:
+\\
+\\
+$x_1^* = \ddfrac{w}{p_2  \bigg(\ddfrac{p_2}{ p_1}\bigg)^{\frac{1}{\rho-1}} + p_1} = \ddfrac{w \text{ }p_1^{\frac{1}{\rho-1}}}{p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}}$
+\\
+\\
+\\
+Thus the indirect utility function is:
+\\
+\\
+$v(p,w) = w \Bigg[ \ddfrac{\bigg(p_2^{\frac{p}{\rho-1}} + \text{ }p_1^{\frac{p}{\rho-1}}\bigg)}{\bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\rho} \Bigg]^{\frac{1}{\rho}} = \ddfrac{w}{\bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{\rho - 1}{\rho}}  $
+\\
+\\
+\\
+Therefore if we set $w = e(u, p) $ we get the expenditure function: 
+\\
+\\
+$ e(u, p)= \bar{u} \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{\rho - 1}{\rho}$. 
+\\
+\\
+Thus the hicksian demand for good i is $ x_i^H(p, u) = \ddfrac{\partial e(u, p)}{\partial p_i} = \bar{u} \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - 1}{\rho} p_i^\frac{ 1}{\rho-1}$
+\\
+\\
+\\
+Now we will verify the properties of 3.E.2
+\\
+\\
+\textbf{1.} $e(u, \alpha p)= \bar{u} \bigg((\alpha p_1)^{\frac{\rho}{\rho-1}} + (\alpha p_2)^{\frac{\rho}{\rho-1}}\bigg)^\frac{\rho - 1}{\rho} = \alpha \bar{u} \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{\rho - 1}{\rho} = \alpha e(u, \alpha p) \implies $ homogenous of degree 1. 
+\\
+\\
+\textbf{2.} $\ddfrac{\partial e(u, p)}{\partial p_i} = \bar{u} \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - 1}{\rho} p_i^\frac{  1}{\rho-1} \geq 0 \implies $ non decreasing for all $p_i$. 
+\\
+\\
+$\ddfrac{\partial e(u, p)}{\partial u} =  \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ \rho - 1}{\rho}  > 0 \implies $ increasing in $ u. $
+\\
+\\
+\\
+\textbf{3.} $\ddfrac{\partial^2 e(u, p)}{\partial p_i^2} = - \frac{1}{\rho}\bar{u} \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - 1 - \rho}{\rho} p_i^\frac{ - 1}{\rho-1} + \frac{1}{\rho - 1}\bar{u} \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - 1 }{\rho} p_i^\frac{ 2 - \rho}{\rho-1}  < 0 \implies $ concave for all $p_i$. 
+\\
+\\
+\\
+\textbf{4.} It is clear from the function that the function is defined and continous for all $u$ and $ p_i$. 
+\\
+\\
+\\
+Finally we will verify the properties of 3.E.3
+\\
+\\
+\textbf{1.} $x_i^H(\alpha p, u) = \bar{u} \bigg((\alpha p_1)^{\frac{\rho}{\rho-1}} + (\alpha p_2)^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - 1}{\rho} ( \alpha p_i)^\frac{ 1}{\rho-1} \\
+\\
+= \alpha^{\frac{\rho - \rho}{\rho -1 }}\bar{u} \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - 1}{\rho}  p_i^\frac{ 1}{\rho-1} = \bar{u} \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - 1}{\rho}  p_i^\frac{ 1}{\rho-1} =  x_i^H(p, u) \implies $  homogeneous of degree 0. 
+\\
+\\
+\\
+\textbf{2.} By plugging in the hicksion demand in the utility function we get:
+\\
+\\
+$u(H(p, u)) = \Bigg[ u^\rho \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - \rho}{\rho} p_1^\frac{ \rho}{\rho-1} + u^\rho \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^\frac{ - \rho}{\rho} p_2^\frac{ \rho}{\rho-1} \Bigg]^\frac{1}{\rho}$  
+\\
+\\
+$= u \Bigg[  \bigg(p_1^{\frac{\rho}{\rho-1}} + p_2^{\frac{\rho}{\rho-1}}\bigg)^{-1}  \bigg(p_1^{\frac{\rho}{\rho-1}} +  p_2^\frac{ \rho}{\rho-1} \bigg) \Bigg]^\frac{1}{\rho} = u$
+\\
+\\
+Therefore, there is no excess utility i.e $\forall x \in H(p, u), u(x) = u $
+\\
+\\
+\textbf{3.} Corollary to the previous property it is straightforward that there exists a unique element in $H(p,u) $ given a prices and utility level. 
+\\
+\\
+\end{problem}
+\pagebreak
+\begin{problem}{5}. \\ \\
+As mentioned in 3.D.6 we will assume $ \alpha + \beta + \gamma = 1 $ 
+\\
+\\
+\textbf{a.}
+\begin{flalign*} 
+L& = p_1 x_1 + p_2 x_2 +  p_3 x_3 +  \lambda \big[\bar{u} - (x_1 - b_1)^\alpha (x_2 - b_2)^\beta (x_3 - b_3)^\gamma \big]& \\ \\
+\text{F.O.C's are below: }
+\\
+\\
+\frac{dL}{dx_1} & = p_1  - \lambda \alpha (x_1 - b_1)^{\alpha -1} (x_2 - b_2)^\beta (x_3 - b_3)^\gamma = 0& (1)& \\ \\
+\frac{dL}{dx_2} & = p_2  - \lambda \beta  (x_1 - b_1)^\alpha (x_2 - b_2)^{\beta-1} (x_3 - b_3)^\gamma = 0& (2)& \\ \\
+\frac{dL}{dx_3} & = p_3  - \lambda \gamma (x_1 - b_1)^\alpha (x_2 - b_2)^\beta (x_3 - b_3)^\gamma = 0& (3)& \\ \\
+\frac{dL}{d\lambda} & = \bar{u} - (x_1 - b_1)^\alpha (x_2 - b_2)^\beta (x_3 - b_3)^{\gamma -1}  = 0& (4)& \\ 
+\end{flalign*} 
+Dividing equation 1 by 2 we get: 
+\\
+\\
+$\ddfrac{\lambda \alpha (x_1 - b_1)^{\alpha -1} (x_2 - b_2)^\beta (x_3 - b_3)^\gamma}{\lambda \beta  (x_1 - b_1)^\alpha (x_2 - b_2)^{\beta-1} (x_3 - b_3)^\gamma} = \ddfrac{p_1}{p_2} \iff x_2 = (x_1 - b_1) \bigg(\ddfrac{\beta p_1}{\alpha p_2} \bigg) + b_2 $
+\\
+\\
+\\
+\\
+And dividing equation 1 by 3 we get: 
+\\
+\\
+$\ddfrac{\lambda \alpha (x_1 - b_1)^{\alpha -1} (x_2 - b_2)^\beta (x_3 - b_3)^\gamma}{\lambda \gamma (x_1 - b_1)^\alpha (x_2 - b_2)^\beta (x_3 - b_3)^\gamma} = \ddfrac{p_1}{p_3} \iff x_3 = (x_1 - b_1) \bigg(\ddfrac{\gamma p_1}{\alpha p_3} \bigg) + b_3 $
+\\
+\\
+\\
+\\
+Next plugging $x_2 $ and $x_3 $ back into the utility constraint we get:
+\\
+\\
+$\bar{u} = (x_1 - b_1)^\alpha \Bigg[(x_1 - b_1) \bigg(\ddfrac{\beta p_1}{\alpha p_2} \bigg) + b_2 - b_2\Bigg]^\beta \Bigg[(x_1 - b_1) \bigg(\ddfrac{\gamma p_1}{\alpha p_3} \bigg) + b_3  - b_3\Bigg]^{\gamma} $
+\\
+\\
+\\
+$\therefore \bar{u} =  (x_1 - b_1)  \bigg(\ddfrac{\beta p_1}{\alpha p_2} \bigg)^\beta \bigg(\ddfrac{\gamma p_1}{\alpha p_3} \bigg)^{\gamma} = (x_1 - b_1) \bigg(\ddfrac{\alpha }{ p_1} \bigg)^{\alpha} \bigg(\ddfrac{\beta}{ p_2} \bigg)^\beta   \bigg(\ddfrac{\gamma }{ p_3} \bigg)^{\gamma} \bigg(\ddfrac{p_1}{ \alpha } \bigg)$
+\\
+\\
+Therefore the hicksian demand for good 1 is 
+\\
+\\
+$ x_1^H =  \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{ p_1 } \bigg) + b_1$
+\\
+\\
+\\
+And by symmetry the hicksian demand for good 2 and 3 are below 
+\\
+\\
+$ x_2^H =  \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{\beta}{p_2   } \bigg) + b_2$ \hspace{8mm} and \hspace{8mm}
+$ x_3^H =  \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \gamma }{ p_3 } \bigg) + b_3$
+\\
+\\
+\\
+Further using the hicksian demands the expenditure function is: 
+\\
+\\
+\\
+$e(p, u) =  p_1 \bigg[ \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{ p_1 } \bigg) + b_1 \bigg] + p_2 \bigg[\bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{\beta}{p_2   } \bigg) + b_2 \bigg] + p_3 \bigg[ \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \gamma }{ p_3 } \bigg) + b_3 \bigg]$
+\\
+\\
+\\
+Therefore $e(p, u) = \displaystyle \sum_{i = 1}^3 p_i b_i + (\alpha + \beta + \gamma ) \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma}  =\displaystyle \sum_{i = 1}^3 p_i b_i + \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} $
+\\
+\\
+\\
+\\
+Now we will verify the properties of 3.E.2
+\\
+\\
+\textbf{1.} $e(u, t p)= \displaystyle t \sum_{i = 1}^3 p_i b_i + t \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma}  = t e(u, p) \implies $homogenous of degree1 
+\\
+\\
+\\
+\textbf{2.} $\ddfrac{\partial e(u, p)}{\partial p_1} = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{ p_1 } \bigg) + b_1  \geq 0 \implies $ non decreasing for $p_1$. 
+\\
+\\
+\\
+$\ddfrac{\partial e(u, p)}{\partial p_2} = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \beta}{ p_2 } \bigg) + b_2  \geq 0 \implies $ non decreasing for $p_2$. 
+\\
+\\
+\\
+$\ddfrac{\partial e(u, p)}{\partial p_3} = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \gamma}{ p_3 } \bigg) + b_3  \geq 0 \implies $ non decreasing for $p_3$. 
+\\
+\\
+\\
+$\ddfrac{\partial e(u, p)}{\partial u} =  \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} > 0 \implies $ increasing in $ u. $
+\\
+\\
+\\
+\textbf{3.} $\ddfrac{\partial^2 e(u, p)}{\partial p_1^2} = - (1- \alpha) \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{ p_1^2 } \bigg)   < 0 \implies $ concave for $p_1$ (Since $ \alpha < 1)$. 
+\\
+\\
+\\
+$\ddfrac{\partial^2 e(u, p)}{\partial p_2^2} = - (1- \beta) \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{ p_2^2 } \bigg) + b_1  < 0 \implies $ concave for $p_2$ (Since $ \beta < 1)$. 
+\\
+\\
+\\
+$\ddfrac{\partial^2 e(u, p)}{\partial p_3^2} = - (1- \gamma) \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \gamma}{ p_3^2 } \bigg) + b_1  < 0 \implies $ concave for $p_3$ (Since $ \gamma < 1)$. 
+\\
+\\
+\\
+\textbf{4.} It is clear from the functional form that the it is defined and continous for all $u$ and $ p_i$. 
+\\
+\\
+\\
+Finally we will verify the properties of 3.E.3, we will check for $x_1^H $ since if the properties hold for $x_1^H $ it will hold for $x_2^H $ and $x_3^H $ because of symmetry :
+\\
+\\
+\textbf{1.} $x_1^H(t p, u) \text{ } =\bar{u} \bigg(\ddfrac{t p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ t p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{t p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{ t p_1 } \bigg) + b_1 \\
+\\
+= t^{\alpha + \beta + \gamma -1} \text{ } \bar{u} \bigg(\ddfrac{ p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{  p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{ p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{  p_1 } \bigg) + b_1 =  x_i^H(p, u) \implies $  homogeneous of degree 0. 
+\\
+\\
+\\
+\textbf{2.} By plugging in the hicksion demand in the utility function we get: 
+\\
+\\
+$u(H(p, u)) = \Bigg[u \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{ p_1 } \bigg) + b_1  - b_1 \bigg]^\alpha \bigg[u \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \beta}{ p_2 } \bigg) + b_2  - b_2\bigg]^\beta \bigg[u \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \gamma}{ p_3 } \bigg) + b_3 - b_3\bigg]^\gamma$  
+\\
+\\
+\\
+\\
+$= u \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha(\alpha + \beta + \gamma -1)} \bigg(\ddfrac{ p_2}{\beta } \bigg)^{\beta(\alpha + \beta + \gamma -1)}   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma(\alpha + \beta + \gamma -1)} = u$
+\\
+\\
+\\
+Therefore, there is no excess utility i.e $\forall x \in H(p, u), u(x) = u $
+\\
+\\
+\textbf{3.} Corollary to the previous property it is straightforward that there exists a unique element in $H(p,u) $ given a prices and utility level. 
+\\
+\\
+\textbf{b.} 
+\\
+\\
+ $\ddfrac{\partial e(u, p)}{\partial p_1} = \alpha \bar{u} \bigg(\ddfrac{p_1^{\alpha-1} }{ \alpha^{\alpha}} \bigg) \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma}  + b_1 = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \alpha}{ p_1 } \bigg) + b_1 = x_1^H$. 
+\\
+\\
+\\
+$\ddfrac{\partial e(u, p)}{\partial p_2} = \beta \bar{u} \bigg(\ddfrac{p_2^{\beta-1} }{ \beta^{\beta}} \bigg) \bigg(\ddfrac{ p_1}{\alpha } \bigg)^\alpha   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma}  + b_2 = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \beta}{ p_2 } \bigg) + b_2  = x_2^H$. 
+\\
+\\
+\\
+$\ddfrac{\partial e(u, p)}{\partial p_3} = \gamma \bar{u} \bigg(\ddfrac{p_3^{\gamma-1} }{ \gamma^{\gamma}} \bigg) \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_1}{  \alpha } \bigg)^{\alpha}  + b_3 = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg(\ddfrac{ \gamma}{ p_3 } \bigg) + b_3 = x_3^H$. 
+\\
+\\
+\\
+\textbf{c.} 
+\\
+\\
+First we need to find indirect utility, $ v(p, w) $, by setting $ u = v(p, w) $, in the expenditure function. 
+\begin{flalign*} 
+w&   = \displaystyle \sum_{i = 1}^3 p_i b_i + \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \iff v(p, w)  = \displaystyle \bigg[w - \sum_{i = 1}^3 p_i b_i \bigg]  \bigg(\ddfrac{\alpha }{ p_1 } \bigg)^{\alpha} \bigg(\ddfrac{\beta }{p_2 } \bigg)^\beta   \bigg(\ddfrac{\gamma }{  p_3} \bigg)^{\gamma} & 
+\end{flalign*} 
+Next we need to find Walrasian Demand, using Roy's identity $ x_1(p, w) = - \ddfrac{\frac{\partial v(p,w)}{\partial p_1} }{\frac{\partial v(p,w)}{\partial w}} $
+\\
+\\
+\\
+\begin{flalign*} 
+\frac{\partial v(p,w)}{\partial p_1} & = - b_1 \bigg(\ddfrac{\alpha }{ p_1 } \bigg)^{\alpha} \bigg(\ddfrac{\beta }{p_2 } \bigg)^\beta   \bigg(\ddfrac{\gamma }{  p_3} \bigg)^{\gamma}  - \bigg[w - \sum_{i = 1}^3 p_i b_i \bigg] \ddfrac{\alpha}{p_1} \bigg(\ddfrac{\alpha }{ p_1 } \bigg)^{\alpha} \bigg(\ddfrac{\beta }{p_2 } \bigg)^\beta   \bigg(\ddfrac{\gamma }{  p_3} \bigg)^{\gamma}
+\\
+\\
+\text{and \hspace{4 mm}} \frac{\partial v(p,w)}{\partial w} & =   \bigg(\ddfrac{\alpha }{ p_1 } \bigg)^{\alpha} \bigg(\ddfrac{\beta }{p_2 } \bigg)^\beta   \bigg(\ddfrac{\gamma }{  p_3} \bigg)^{\gamma}
+\end{flalign*} 
+\\
+\\
+Next, Using the above we get:
+\\
+\\
+\begin{flalign*} 
+x_1 = - \ddfrac{\frac{\partial v(p,w)}{\partial p_1} }{\frac{\partial v(p,w)}{\partial w}} & =   \ddfrac{ b_1 \bigg(\ddfrac{\alpha }{ p_1 } \bigg)^{\alpha} \bigg(\ddfrac{\beta }{p_2 } \bigg)^\beta   \bigg(\ddfrac{\gamma }{  p_3} \bigg)^{\gamma}  + \bigg[w - \sum_{i = 1}^3 p_i b_i \bigg] \ddfrac{\alpha}{p_1} \bigg(\ddfrac{\alpha }{ p_1 } \bigg)^{\alpha} \bigg(\ddfrac{\beta }{p_2 } \bigg)^\beta   \bigg(\ddfrac{\gamma }{  p_3} \bigg)^{\gamma}}{\bigg(\ddfrac{\alpha }{ p_1 } \bigg)^{\alpha} \bigg(\ddfrac{\beta }{p_2 } \bigg)^\beta   \bigg(\ddfrac{\gamma }{  p_3} \bigg)^{\gamma}} 
+\\
+\\
+\\ & = b_1 +  \bigg[w - \displaystyle \sum_{i = 1}^3 p_i b_i \bigg] \ddfrac{\alpha}{p_1} \\ \\
+\end{flalign*} 
+Therefore, $ \ddfrac{\partial x_1}{\partial w} x_1 = \bigg(\ddfrac{\alpha}{p_1}\bigg) b_1 + \bigg[w - \sum_{i = 1}^3 p_i b_i \bigg] \ddfrac{\alpha^2}{p_1^2}$
+\\ 
+\\
+\\
+And $ \ddfrac{\partial x_1}{\partial p_1} = -  \ddfrac{\alpha}{p_1} b_1 - \bigg[w - \displaystyle \sum_{i = 1}^3 p_i b_i \bigg] \ddfrac{\alpha}{p_1^2} $
+\\
+\\
+\\
+Therefore $\ddfrac{\partial x_1}{\partial w} x_1 + \ddfrac{\partial x_1}{\partial p_1} = \bigg[w - \displaystyle  \sum_{i = 1}^3 p_i b_i \bigg] \ddfrac{\alpha^2}{p_1^2} - \bigg[w - \sum_{i = 1}^3 p_i b_i \bigg] \ddfrac{\alpha}{p_1^2} = - \ddfrac{\alpha(1-\alpha)}{p_1^2}\bigg[w - \displaystyle  \sum_{i = 1}^3 p_i b_i \bigg]$
+\\
+\\
+\\
+\\
+And from above we know that $\bigg[ w  - \displaystyle \sum_{i = 1}^3 p_i b_i \bigg] = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} $
+\\
+\\
+\\
+\\
+Therefore, $\ddfrac{\partial x_1}{\partial w} x_1 + \ddfrac{\partial x_1}{\partial p_1} = -\ddfrac{\alpha(1-\alpha)}{p_1^2}\bigg[\bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma} \bigg]$
+$= \ddfrac{\partial x_1^H}{\partial p_1}$
+\\
+\\
+\\
+\\
+And therefore the slutsky's equation is satisfied for $x_1 $ and by symmetry it will be satisfied for other goods as well. 
+\\
+\\
+\\
+\pagebreak
+\\
+\textbf{d.} 
+\\
+\\
+The slutsky's Matrix is 
+\[
+\makebox[\displaywidth][l]{$
+\hspace{3mm}
+  \begin{bmatrix}
+   \frac{d x_1^H }{dp_1}& \frac{d x_1^H }{dp_2} & \frac{d x_1^H }{dp_3} \\ \\
+     \frac{d x_2^H }{dp_1}& \frac{d x_2^H }{dp_2} & \frac{d x_2^H }{dp_3} \\ \\
+   \frac{d x_3^H }{dp_1}& \frac{d x_3^H }{dp_2} & \frac{d x_3^H }{dp_3} \\ \\
+   \end{bmatrix} 
+  = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma}
+  \begin{bmatrix}
+  - \frac{\alpha (1-\alpha)}{p_1^2}& \frac{\alpha \beta}{p_1p_2} & \frac{\alpha \gamma}{p_1p_3} \\ \\
+     \frac{\alpha \beta}{p_1p_2}& - \frac{\beta (1-\beta)}{p_2^2}& \frac{\beta \gamma}{p_2p_3}\\ \\
+    \frac{\alpha \gamma}{p_1p_3}&  \frac{\beta \gamma}{p_2p_3} & - \frac{\gamma (1-\gamma)}{p_3^2} \\ \\
+   \end{bmatrix}
+$}  
+\]
+\\
+\\
+From the above matrix we can conclude that the own substitution term are negative. Further the matrix is symmetric which implies the cross price effects are symmetric.  
+\\
+\\
+\textbf{e.} 
+\\
+\\
+The slutsky's Matrix is 
+\[
+\makebox[\displaywidth][l]{$
+\hspace{3mm}
+  \begin{bmatrix}
+   \frac{d x_1^H }{dp_1}& \frac{d x_1^H }{dp_2} & \frac{d x_1^H }{dp_3} \\ \\
+     \frac{d x_2^H }{dp_1}& \frac{d x_2^H }{dp_2} & \frac{d x_2^H }{dp_3} \\ \\
+   \frac{d x_3^H }{dp_1}& \frac{d x_3^H }{dp_2} & \frac{d x_3^H }{dp_3} \\ \\
+   \end{bmatrix} 
+  = \bar{u} \bigg(\ddfrac{p_1 }{ \alpha} \bigg)^{\alpha} \bigg(\ddfrac{ p_2}{\beta } \bigg)^\beta   \bigg(\ddfrac{p_3}{  \gamma } \bigg)^{\gamma}
+  \begin{bmatrix}
+  - \frac{\alpha (1-\alpha)}{p_1^2}& \frac{\alpha \beta}{p_1p_2} & \frac{\alpha \gamma}{p_1p_3} \\ \\
+     \frac{\alpha \beta}{p_1p_2}& - \frac{\beta (1-\beta)}{p_2^2}& \frac{\beta \gamma}{p_2p_3}\\ \\
+    \frac{\alpha \gamma}{p_1p_3}&  \frac{\beta \gamma}{p_2p_3} & - \frac{\gamma (1-\gamma)}{p_3^2} \\ \\
+   \end{bmatrix}
+$}  
+\]
+\\
+\\
+Since the slutsky's matrix is a symmetric matrix and the non diagonal values are positive and the diagonal values are negative, it is indeed a negative semi-definite matrix. Lastly due to concavity of the expenditure function the rank of the matrix is 2.  
+\end{problem}
+\end{document}
